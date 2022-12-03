@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Jagadish",
+    "address": "Bengaluru, Karnataka",
+    "designation": "SDE",
+    "Company": "Deloitte"
+  },
+  {
+    "name": "Atish Kumar Kushwaha",
+    "address": "Varanasi U.P.",
+    "designation": "SDE 1",
+    "Company": "Zopsmart"
+  },
+  {
+    "name": "Prakash Kumar",
+    "address": "Ahemdabad Gujrat",
+    "designation": "Frontend Developer",
+    "Company": "Ftx infotech"
+  },
+  {
+    "name": "Garvit Joshi",
+    "address": "Jaipur, Rajsthan",
+    "designation": "SDE",
+    "Company": "Adobe"
+  },
+  {
+    "name": "krishna",
+    "address": "Andhra Pradesh",
+    "designation": "SDE",
+    "Company": "Rewaa"
+  },
+  {
+    "name": "Rishika Swaraj",
+    "address": "Nalanda, Bihar",
+    "designation": "Student",
+    "Company": "KIIT"
+  },
+  {
+    "name": "Rajashekhara bhat A B",
+    "address": "Bengaluru, Karnataka",
+    "designation": "SDE",
+    "Company": "Workllama software pvt ltd"
+  },
+  {
+    "name": "Sandeep Chaudhary",
+    "address": "Aurangabad, Maharashtra",
+    "designation": "SDE",
+    "Company": "accenture"
+  },
+  {
+    "name": "Vaibhav",
+    "address": "Kurukshetra",
+    "designation": "SDE",
+    "Company": "Newgen software "
+  },
+  {
+    "name": "Anuradha",
+    "address": "Bengaluru, Karnataka",
+    "designation": "SDE",
+    "Company": "Gainsight"
+  }
+]
