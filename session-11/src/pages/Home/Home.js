@@ -5,6 +5,7 @@ import SelectBox from "../../components/SelectBox/SelectBox";
 import { useUserContext } from "../../context/UserContext/UserContext";
 import { useThemeContext } from "../../context/ThemeContext/ThemeContext";
 import Loader from "../../components/common/Loader";
+import NoData from "../../components/common/NoData";
 
 const Home = () => {
   const { theme } = useThemeContext();
@@ -22,6 +23,7 @@ const Home = () => {
       <SelectBox />
       <div className="mt-6 flex flex-wrap gap-2.5 justify-center">
         {loading && <Loader />}
+        {!loading && !data.length && <NoData />}
         {!loading &&
           data
             ?.filter((member) => {

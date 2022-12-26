@@ -1,9 +1,10 @@
 import React from "react";
 
-const Select = ({ options, value, handleChange }) => {
+const Select = ({ name, options, value, handleChange }) => {
+  console.log(value);
   return (
     <select
-      name="name"
+      name={name}
       value={value}
       onChange={(e) => handleChange(e.target.value)}
       className="form-select appearance-none
@@ -21,6 +22,9 @@ const Select = ({ options, value, handleChange }) => {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-[#272E35] focus:outline-none"
     >
+      <option value="" selected disabled hidden>
+        {`Select a ${name}`}
+      </option>
       {options.map((option) => (
         <option value={option}>{option}</option>
       ))}

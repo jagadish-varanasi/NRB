@@ -17,11 +17,13 @@ function SelectBox() {
   return (
     <div className="flex gap-4 mt-6 mr-4 justify-end">
       <Select
+        name="state"
         value={selectedState}
         handleChange={setSelectedState}
         options={states}
       />
       <Select
+        name="city"
         value={selectedCity}
         handleChange={setSelectedCity}
         options={cities}
