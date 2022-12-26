@@ -1,6 +1,11 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
+input,
+button {
+  padding: 0.5rem 2rem;
+  margin: 0.4rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
 }
 
 .header-light {
@@ -17,16 +22,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-input,
-button {
-  padding: 0.5rem 2rem;
-  margin: 0.4rem 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
 }
 
 .right-panel {

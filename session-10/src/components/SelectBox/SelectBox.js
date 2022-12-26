@@ -22,7 +22,9 @@ function SelectBox() {
         onChange={(e) => setSelectedState(e.target.value)}
       >
         {states.map((state) => (
-          <option value={state}>{state}</option>
+          <option value={state} key={state}>
+            {state}
+          </option>
         ))}
       </select>
       <select
@@ -30,8 +32,10 @@ function SelectBox() {
         value={selectedCity}
         onChange={(e) => setSelectedCity(e.target.value)}
       >
-        {cities.map((state) => (
-          <option value={state}>{state}</option>
+        {cities.map((city) => (
+          <option value={city} key={city}>
+            {city}
+          </option>
         ))}
       </select>
     </div>

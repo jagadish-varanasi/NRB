@@ -9,14 +9,16 @@ function Header() {
   const { theme, setTheme } = useThemeContext();
   const { reference, handleSearchText } = useUserContext();
 
-  const themeButton = theme == "light" ? "Dark" : "Light";
+  const isLight = theme === "light";
+
+  const themeButton = isLight ? "Dark" : "Light";
 
   const toggleTheme = () => {
-    setTheme(theme == "light" ? "dark" : "light");
+    setTheme(isLight ? "dark" : "light");
   };
 
   return (
-    <div className={theme == "dark" ? "header-dark" : "header-light"}>
+    <div className={isLight ? "header-light" : "header-dark"}>
       <img src={logo} alt="logo" width="40px" height="40px" />
       <form
         onSubmit={(e) => {
