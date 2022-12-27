@@ -1,18 +1,21 @@
-import ReactDOM from "react-dom/client";
+import "./App.css";
 import { lazy, Suspense } from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { UserContextProvider } from "./context/UserContext/UserContext";
 import { ThemeContextProvider } from "./context/ThemeContext/ThemeContext";
-import Home from "./pages/Home/Home";
-import "./App.css";
-
+const Home = lazy(() => import("./pages/Home/Home"));
 const Error = lazy(() => import("./components/Error/Error"));
 const CardDetails = lazy(() => import("./pages/CardDetails/CardDetails"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Home />
+      </Suspense>
+    ),
     errorElement: (
       <Suspense fallback={<div>Loading...</div>}>
         <Error />

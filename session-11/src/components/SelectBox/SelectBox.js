@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useUserContext } from "../../context/UserContext/UserContext";
 import StateCity from "../../data/state-city.json";
-import "./SelectBox.css";
+import Select from "../common/Select";
 
 function SelectBox() {
   const { selectedCity, setSelectedCity, selectedState, setSelectedState } =
@@ -15,29 +15,19 @@ function SelectBox() {
   }, [selectedState]);
 
   return (
-    <div className="select">
-      <select
-        name="name"
+    <div className="flex gap-4 mt-6 mr-4 justify-end">
+      <Select
+        name="state"
         value={selectedState}
-        onChange={(e) => setSelectedState(e.target.value)}
-      >
-        {states.map((state) => (
-          <option value={state} key={state}>
-            {state}
-          </option>
-        ))}
-      </select>
-      <select
-        name="name"
+        handleChange={setSelectedState}
+        options={states}
+      />
+      <Select
+        name="city"
         value={selectedCity}
-        onChange={(e) => setSelectedCity(e.target.value)}
-      >
-        {cities.map((city) => (
-          <option value={city} key={city}>
-            {city}
-          </option>
-        ))}
-      </select>
+        handleChange={setSelectedCity}
+        options={cities}
+      />
     </div>
   );
 }

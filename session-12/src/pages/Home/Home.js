@@ -1,14 +1,13 @@
-import React, { Fragment, useState, useRef } from "react";
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header";
 import SelectBox from "../../components/SelectBox/SelectBox";
-import "./Home.css";
 import { useUserContext } from "../../context/UserContext/UserContext";
 import { useThemeContext } from "../../context/ThemeContext/ThemeContext";
-import NoData from "../../components/NoData/NoData";
+import Loader from "../../components/common/Loader";
+import NoData from "../../components/common/NoData";
 
 const Home = () => {
-  const { theme } = useThemeContext();
+  const { isLight } = useThemeContext();
   const { data, loading, searchText } = useUserContext();
 
   const filteredMembers = data?.filter((member) => {
@@ -22,21 +21,21 @@ const Home = () => {
     }
   });
 
+  const isNoData = !filteredMembers.length;
+
   return (
-    <div className={theme == "dark" ? "dark" : "light"}>
+    <div className={`min-h-[100vh] ${isLight ? "bg-white" : " bg-gray-600"}`}>
       <Header />
       <SelectBox />
-      <div className="card-list">
+      <div className="mt-6 flex flex-wrap gap-2.5 justify-center">
         {loading ? (
           <Loader />
-        ) : !data?.length ? (
+        ) : isNoData ? (
           <NoData />
-        ) : filteredMembers.length ? (
+        ) : (
           filteredMembers.map((member) => (
             <Card key={member.login} member={member} />
           ))
-        ) : (
-          <NoData />
         )}
       </div>
     </div>
