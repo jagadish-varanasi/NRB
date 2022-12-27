@@ -5,17 +5,17 @@ const useGitHubMembersByCity = (selectedCity) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   useEffect(() => {
-    try {
-      (async () => {
+    (async () => {
+      try {
         setLoading(true);
         const data = await getGithubMembersByCity(selectedCity);
         setData(data);
-      })();
-    } catch {
-      alert("Something went wrong!!");
-    } finally {
-      setLoading(false);
-    }
+      } catch {
+        alert("Something went wrong!!");
+      } finally {
+        setLoading(false);
+      }
+    })();
   }, [selectedCity]);
 
   return { loading, data: data };
