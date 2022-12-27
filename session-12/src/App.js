@@ -32,11 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: (
-      <Suspense fallback={<div>Loading...</div>}>
-        <Login />
-      </Suspense>
-    ),
+    element: <Login />,
   },
   {
     path: "/:id",
