@@ -4,21 +4,24 @@ import { getGithubMembersByCity } from "../services/githubMembersByCity";
 const useGitHubMembersByCity = (selectedCity) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-  useEffect(() => {
+
+  const fetchMembers = async () => {
     try {
-      (async () => {
-        setLoading(true);
-        const data = await getGithubMembersByCity(selectedCity);
-        setData(data);
-      })();
+      setLoading(true);
+      const data = await getGithubMembersByCity(selectedCity);
+      setData(data);
     } catch {
       alert("Something went wrong!!");
     } finally {
       setLoading(false);
     }
+  };
+
+  useEffect(() => {
+    fetchMembers();
   }, [selectedCity]);
 
-  return { loading, data: data};
+  return { loading, data: data };
 };
 
 export default useGitHubMembersByCity;

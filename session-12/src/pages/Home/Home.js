@@ -7,7 +7,7 @@ import Loader from "../../components/common/Loader";
 import NoData from "../../components/common/NoData";
 
 const Home = () => {
-  const { theme } = useThemeContext();
+  const { isLight } = useThemeContext();
   const { data, loading, searchText } = useUserContext();
 
   const filteredMembers = data?.filter((member) => {
@@ -21,25 +21,21 @@ const Home = () => {
     }
   });
 
+  const isNoData = !filteredMembers.length;
+
   return (
-    <div
-      className={`min-h-[100vh] ${
-        theme == "dark" ? "bg-gray-600" : " bg-white"
-      }`}
-    >
+    <div className={`min-h-[100vh] ${isLight ? "bg-white" : " bg-gray-600"}`}>
       <Header />
       <SelectBox />
       <div className="mt-6 flex flex-wrap gap-2.5 justify-center">
         {loading ? (
           <Loader />
-        ) : !data.length ? (
+        ) : isNoData ? (
           <NoData />
-        ) : filteredMembers.length ? (
+        ) : (
           filteredMembers.map((member) => (
             <Card key={member.login} member={member} />
           ))
-        ) : (
-          <NoData />
         )}
       </div>
     </div>

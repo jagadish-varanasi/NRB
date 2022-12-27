@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <div className="w-4/5 p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring  ring-gray-600 lg:max-w-xl md:max-w-md sm:max-w-sm">
+      <div className="w-4/5 p-6 m-auto bg-white rounded-md shadow-xl shadow-gray-600/40 ring  ring-gray-200 lg:max-w-xl md:max-w-md sm:max-w-sm">
         <h1 className="text-lg font-semibold text-center text-gray-700 uppercase md:text-3xl">
           Sign in
         </h1>
